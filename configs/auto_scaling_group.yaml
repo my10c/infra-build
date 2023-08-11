@@ -1,0 +1,28 @@
+---
+
+bao-anomalydetector:
+  LaunchTemplate:
+    LaunchTemplateName: 'anomalydetector'
+    Version: '$Latest'
+  MinSize: 0
+  MaxSize: 3
+  DesiredCapacity: 0
+  DefaultCooldown: 300
+  AvailabilityZones: ['us-east-1c', 'us-east-1d', 'us-east-1f']
+  TargetGroupARNs:
+    -
+  HealthCheckGracePeriod: 300
+  VPCZoneIdentifier:
+    - 'subnet-xxxxxxxxxxxxxxxxx'
+    - 'subnet-xxxxxxxxxxxxxxxxx'
+    - 'subnet-xxxxxxxxxxxxxxxxx'
+  TerminationPolicies: 'default'
+  Tags:
+    component: 'anomalydetector'
+    hostid: 'none'
+    datacenter: 'us-east-1'
+    environment: 'dev'
+    sphere: 'bao'
+    tld: 'xxx.com'
+    plume_component_deployable: 'false'
+    costcenter: 'bao'

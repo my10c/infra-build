@@ -1,0 +1,43 @@
+---
+
+aurora:
+  description: 'aurora'
+  in_rules:
+    - 'TCP 3306 3306 47.228.0.0/25'
+    - 'TCP 3306 3306 47.228.0.128/25'
+    - 'TCP 3306 3306 47.228.1.0/25'
+    - 'ICMP -1 -1 aurora'
+  out_rules:
+    - 'TCP ANY ANY 47.228.0.0/25'
+    - 'TCP ANY ANY 47.228.0.128/25'
+    - 'TCP ANY ANY 47.228.1.0/25'
+    - 'ICMP -1 -1 aurora'
+
+
+trusted:
+  description: 'trusted'
+  in_rules:
+    - 'TCP 22 22 bastion'
+    - 'TCP 22 22 jenkins'
+    - 'TCP 22 22 saltmaster'
+    - 'TCP 5665 5665 icinga2-satellite'
+    - 'ICMP -1 -1 bastion'
+    - 'ICMP -1 -1 icinga2-satellite'
+    - 'ICMP -1 -1 saltmaster'
+  out_rules:
+    - 'TCP 4505 4506 saltmaster'
+    - 'UDP 53 53 169.254.169.253/32'
+    - 'UDP 123 123 169.254.169.123/32'
+# NOTE:
+# - every instance should get trusted, instead each getting
+#   the above inbound rules
+# - limited outgoing by setup none everywhere and allow from
+#   trusted, and add these outbound rules
+# * NTP (UDP 123) to 169.254.169.123  which is AWS multicast NTP server
+# * DNS (UDP 53) to the AWS DNS ip, set per VPC, so will need to be set manually
+# * 443 (TCP) (for apt get)
+# * ALL (TCP/UDP/ICMP) to VPC_NET
+# * 4505 (TCP) and 4506 (TCP) allow minions to talk to salt master
+#    - 'ICMP -1 -1 47.228.0.0/25'
+#    - 'ICMP -1 -1 47.228.0.128/25'
+#    - 'ICMP -1 -1 47.228.1.0/25'

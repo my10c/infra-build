@@ -1,0 +1,21 @@
+---
+
+us-east-1:
+  dc_region: 'Virginia'
+  dc_endpoint: 'us-east-1'
+  dc_isocode: 'us-va'
+  dc_public_domain: 'xxx.com'
+  dc_domain: 'xxx.xxx.com'
+  dc_network: 'xxx.xxx.xxx.xxx'
+  dc_cidr: '20'
+  dc_bastion: 'avalanche'
+  dc_ami: 'ami-xxxxxxxxxxxxxxxxx'
+  dc_ipv6: false
+  dc_public: false
+  dc_vpc_id: 'vpc-xxxxxxxxxxxxxxxxx'
+  dc_subnet_private: ['xxx.xxx.xxx.xxx', 'xxx.xxx.xxx.xxx', 'xxx.xxx.xxx.xxx']
+  dc_subnet_private_cidr: '25'
+  dc_subnet_private_id: ['subnet-xxxxxxxxxxxxxxxxx', 'subnet-xxxxxxxxxxxxxxxxx', 'subnet-xxxxxxxxxxxxxxxxx']
+  dc_subnet_public: ['xxx.xxx.xxx.xxx', 'xxx.xxx.xxx.xxx', 'xxx.xxx.xxx.xxx']
+  dc_subnet_public_cidr: '25'
+  dc_subnet_public_id: ['subnet-xxxxxxxxxxxxxxxxx', 'subnet-xxxxxxxxxxxxxxxxx', 'subnet-xxxxxxxxxxxxxxxxx']

@@ -1,0 +1,6 @@
+#cloud-config
+mounts:
+ - [ephemeral0, null]
+
+runcmd:
+ - /usr/local/sbin/do-bootstrap

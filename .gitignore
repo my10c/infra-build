@@ -2,4 +2,3 @@
 *.pyc
 awsbuild/__pycache__
 logs/*
-configs/*

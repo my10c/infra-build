@@ -1,0 +1,110 @@
+---
+
+# =============================
+bao-alb:
+  type: 'application'
+  tag:
+    - costcenter: 'bao'
+    - component: 'alb'
+  scheme: 'internal'
+  subnets:
+    - 'ALL'
+  securitygroups:
+    - 'bao-piranha'
+  ipaddresstype: 'ipv4'
+  listner:
+    8083:
+      protocol: 'HTTP'
+      defaultactions:
+        Type: 'forward'
+        TargetGroupArn: 'xxxxxxx'
+      rules:
+        1:
+          Conditions:
+            Field: 'host-header'
+            Values:
+              - 'xxxxxxx'
+          Actions:
+            Type: 'forward'
+            TargetGroupArn: 'xxxxxxx'
+            Order: 1
+        2:
+          Conditions:
+            Field: 'host-header'
+            Values:
+              - 'xxxxxxx'
+          Actions:
+            Type: 'forward'
+            TargetGroupArn: 'xxxxxxx'
+            Order: 2
+    8093:
+      protocol: 'HTTP'
+      defaultactions:
+        Type: 'forward'
+        TargetGroupArn: 'xxxxxxx'
+      rules:
+        1:
+          Conditions:
+            Field: 'host-header'
+            Values:
+              - 'xxxxxxx'
+          Actions:
+            Type: 'forward'
+            TargetGroupArn: 'xxxxxxx'
+            Order: 1
+        2:
+          Conditions:
+            Field: 'host-header'
+            Values:
+              - 'xxxxxxx'
+          Actions:
+            Type: 'forward'
+            TargetGroupArn: 'xxxxxxx'
+            Order: 2
+
+# =============================
+bao-nlb:
+  type: 'network'
+  tag:
+    - costcenter: 'bao'
+    - component: 'nlb'
+  scheme: 'internet-facing'
+  subnets:
+    - 'ALL'
+  ipaddresstype: 'ipv4'
+  listner:
+    443:
+      protocol: 'TCP'
+      defaultactions:
+        Type: 'forward'
+        TargetGroupArn: 'xxxxxxx'
+      rules:
+
+# =============================
+bao-web:
+  type: 'application'
+  tag:
+    - costcenter: 'bao'
+    - component: 'alb'
+  scheme: 'internet-facing'
+  subnets:
+    - 'ALL'
+  securitygroups:
+    - 'bao-web-external'
+  ipaddresstype: 'ipv4'
+  listner:
+    80:
+      protocol: 'HTTP'
+      defaultactions:
+        Type: 'forward'
+        TargetGroupArn: 'bao-web'
+      rules:
+    443:
+      protocol: 'HTTPS'
+      certificates:
+        certificatearn: ''
+        isdefault: true
+      defaultactions:
+        Type: 'forward'
+        TargetGroupArn: 'bao-web'
+      rules:

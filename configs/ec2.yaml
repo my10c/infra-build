@@ -1,0 +1,25 @@
+---
+
+# example
+
+momo:
+  start_sequence: '1'
+  count: '1'
+  tags:
+    - Name: ''
+    - component: ''
+    - datacenter: ''
+    - environment: ''
+    - hostid: '01'
+    - plume_component_deployable: 'never'
+    - role: ''
+    - sphere: ''
+    - tld: ''
+  sec_groups:
+    - ''
+  type: 't3.medium'
+  create: true
+  public_ip: false
+  static_ip: false
+  vpc_placement: 'be'
+  data_volume: '1024'

@@ -1,0 +1,34 @@
+---
+
+# tag order is based on reading the hostname from left to right
+
+bao-devops:
+  VersionDescription: 'Initial release'
+  IamInstanceProfile: 'arn:aws:iam::XXXXXXXXXXXX:instance-profile/plume-ec2-autoscale'
+  BlockDeviceMappings:
+    DeviceName: '/dev/sda1'
+    Ebs:
+      VolumeSize: 64
+      DeleteOnTermination: true
+  ImageId: 'ami-XXXXXXXXXXXXXXXXX'
+  InstanceType: 't3.medium'
+  KeyName: 'admin-bao'
+  Monitoring: true
+  Placement:
+    Tenancy: 'default'
+  InstanceInitiatedShutdownBehavior: 'terminate'
+  UserData:
+    - ''
+  TagSpecifications:
+    component: 'devops'
+    role: 'none'
+    hostid: 'none'
+    datacenter: 'us-east-1'
+    environment: 'dev'
+    sphere: 'bao'
+    tld: 'xxx.com'
+    plume_component_deployable: 'never'
+    costcenter: 'bao'
+  SecurityGroupIds:
+    - bao-trusted
+    - bao-devops
