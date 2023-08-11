@@ -1,14 +1,17 @@
 # DEPRECATED
 I created this before [Terraform](https://www.terraform.io) existed, sometime back in June 2010 
 Today I would suggest to use Terraform instead of my script since I no longer 
-maintaint it, is here for historical reson only.
+maintaint it, is here for historical reason only.
 
 ### Note:
 - Originally the script was written to be able to setup a AWS infra quick, same setup in multiple regions 
-  and able to re-create it fast in case of disaster
+  and able to re-create it fast in case of disaster and delete it is needed
 - The readme is stripped down
-- Network / prefix sizes and IPV6 kept for reference
-- Aug 2023, AWS charges fro public IP
+- Network / prefix sizes and IPV6 sections are kept for reference
+- Most Mobile device are using IPv6
+
+these below was never part of the repo, added as a FYI
+- Aug 2023, AWS charges for public IP
 - Most Mobile device are using IPv6
 - [IP issue with EKS] (https://betterprogramming.pub/amazon-eks-is-eating-my-ips-e18ea057e045)
 ```
