@@ -1,8 +1,5 @@
 *.swp
 *.pyc
 awsbuild/__pycache__
-bin/__pycache__
 logs/*
-tmp/*
-work/*
-config/*
+configs/*

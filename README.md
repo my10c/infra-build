@@ -10,7 +10,7 @@ maintaint it, is here for historical reson only
 ### History
 Orignally it was written in bash using the AWS java api, then once boto and awscli came, it was rewrite in bash and making use of the awscli command. Later with boto2 it was rewrite again, this time in python2, quick and dirty.  So I decided to refactor and write the script properly in python3 and using the new resource now available in AWS.
 
-### What can it do, at least once the refactorting is completed
+### What can it do
 The script is expecting that every single resouce is tagged with the same name.
 Given couple simple configuration, the script will do the following
 1. create/destory VPC
@@ -73,8 +73,5 @@ optional arguments:
   -log LOGFILE          log file to be used, default to awsbuild.log in
                         current directory
 ```
-
-### Hello world
-Comment/help/suggestion welcome
 
 - momo
