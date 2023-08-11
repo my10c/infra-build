@@ -3,19 +3,12 @@ I created this before [Terraform](https://www.terraform.io) existed, sometime ba
 Today I would suggest to use Terraform instead of my script since I no longer 
 maintaint it, is here for historical reson only
 
-### major refactoring:
-	python3
-	adjusted for new aws stuff/api
-	nothing work yet! execpt: help, version and action regions
-
-# ops-aws : my aws terraform script written in python3
+# infra-build  : my aws terraform script written in python3
 
 ## Background
 
 ### History
-Orignally it was written in bash using the AWS java api, then once boto and awscli came, it was rewrite in bash
-and making use of the awscli command. Later with boto2 it was rewrite again, this time in python2, quick and dirty.
-So I decided to refactor and write the script properly in python3 and using the new resource now available in AWS.
+Orignally it was written in bash using the AWS java api, then once boto and awscli came, it was rewrite in bash and making use of the awscli command. Later with boto2 it was rewrite again, this time in python2, quick and dirty.  So I decided to refactor and write the script properly in python3 and using the new resource now available in AWS.
 
 ### What can it do, at least once the refactorting is completed
 The script is expecting that every single resouce is tagged with the same name.
